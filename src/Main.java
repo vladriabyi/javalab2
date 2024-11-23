@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -12,5 +12,14 @@ public class Main {
         
         // Перетворення введеного тексту в StringBuilder для подальшої обробки
         StringBuilder text = new StringBuilder(inputText);
+        
+        // Виконати дію: сортування речень за кількістю слів
+        sortSentencesByWordCount(text);
+    }
+
+    // Метод для сортування речень за кількістю слів
+    public static void sortSentencesByWordCount(StringBuilder text) {
+        // Розбиття тексту на речення
+        String[] sentences = text.toString().split("\\. ");
     }
 }
