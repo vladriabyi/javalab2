@@ -21,5 +21,32 @@ public class Main {
     public static void sortSentencesByWordCount(StringBuilder text) {
         // Розбиття тексту на речення
         String[] sentences = text.toString().split("\\. ");
+        
+        // Створення списку для зберігання пар "речення - кількість слів"
+        List<Sentence> sentenceList = new ArrayList<>();
+        for (String sentence : sentences) {
+            // Підрахунок кількості слів у кожному реченні
+            int wordCount = sentence.split("\\s+").length;
+            sentenceList.add(new Sentence(sentence, wordCount));
+        }
+    }
+
+    // Клас для збереження інформації про речення
+    static class Sentence {
+        private String text;
+        private int wordCount;
+
+        public Sentence(String text, int wordCount) {
+            this.text = text;
+            this.wordCount = wordCount;
+        }
+
+        public String getText() {
+            return text;
+        }
+
+        public int getWordCount() {
+            return wordCount;
+        }
     }
 }
