@@ -29,6 +29,15 @@ public class Main {
             int wordCount = sentence.split("\\s+").length;
             sentenceList.add(new Sentence(sentence, wordCount));
         }
+
+        // Сортування речень за кількістю слів
+        sentenceList.sort(Comparator.comparingInt(Sentence::getWordCount));
+        
+        // Виведення відсортованих речень
+        System.out.println("\nВідсортовані речення за кількістю слів:");
+        for (Sentence sentence : sentenceList) {
+            System.out.println(sentence.getText());
+        }
     }
 
     // Клас для збереження інформації про речення
